@@ -65,10 +65,9 @@ class GameRunTest {
 	 */
 	@Test
 	void unLancerDeTrop() {
-		lancerPlusieurs(20, 0); // Le jeu est fini
+		lancerPlusieurs(20, 0);
 
 		assertThrows(IllegalStateException.class, () -> {
-			// On doit avoir une exception
 			partie.enregistreLancer(0);
 		}, "Le jeu est fini, on doit avoir une exception");
 	}
