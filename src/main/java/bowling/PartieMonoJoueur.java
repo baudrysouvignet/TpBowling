@@ -81,15 +81,19 @@ public class PartieMonoJoueur {
 	}
 
 	private ArrayList<Integer> quilleTour(int indexTour) {
-		if (tours.get(indexTour) == null) {
-			ArrayList<Integer> quillesVides = new ArrayList<Integer>();
-			quillesVides.add(0);
-			quillesVides.add(0);
-			quillesVides.add(0);
-			return quillesVides;
+    ArrayList<Integer> lancers = tours.get(indexTour).getLancers();
+
+		if (lancers == null || lancers.isEmpty()) {
+			ArrayList<Integer> vides = new ArrayList<>();
+			vides.add(0);
+			vides.add(0);
+			vides.add(0);
+			return vides;
 		}
-		return tours.get(indexTour).getLancers();
+
+		return lancers;
 	}
+
 
 	/**
 	 * @return vrai si la partie est terminée pour ce joueur, faux sinon
